@@ -6,8 +6,8 @@ function smsemailnotify_civicrm_post( $op, $objectName, $objectId, &$objectRef )
   if ($op == 'create' && $objectName == 'Activity') {
     // Activity Type ID 45 is inboard SMS.  51 is for testing.
     if($objectRef->activity_type_id == 45) { 
-      $to = 'info@healthcare-now.org';
-      $from = 'noreply@healthcare-now.org';
+      $to = 'info@example.org';
+      $from = 'noreply@example.org';
       // Get the contact's ID.
       $contactId = civicrm_api3('ActivityContact', 'getvalue', array(
         'sequential' => 1,
